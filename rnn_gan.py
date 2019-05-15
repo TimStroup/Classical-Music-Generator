@@ -136,12 +136,11 @@ flags.DEFINE_boolean("synthetic_chords", False,       #
                    "Train on synthetically generated chords (three tones per event).")
 flags.DEFINE_integer("tones_per_cell", 1,             # 2,3
                    "Maximum number of tones to output per RNN cell.")
-flags.DEFINE_string("composer", None, "Specify exactly one composer, and train model only on this.")
 flags.DEFINE_boolean("generate_meta", False, "Generate the composer and genre as part of output.")
 flags.DEFINE_float("random_input_scale", 1.0,       #
                    "Scale of random inputs (1.0=same size as generated features).")
 flags.DEFINE_boolean("end_classification", False, "Classify only in ends of D. Otherwise, does classification at every timestep and mean reduce.")
-
+flags.DEFINE_string("composer", None, "Specify exactly one composer, and train model only on this.")
 FLAGS = flags.FLAGS
 
 model_layout_flags = ['num_layers_g', 'num_layers_d', 'meta_layer_size', 'hidden_size_g', 'hidden_size_d', 'biscale_slow_layer_ticks', 'multiscale', 'multiscale', 'disable_feed_previous', 'pace_events', 'minibatch_d', 'unidirectional_d', 'feature_matching', 'composer']
